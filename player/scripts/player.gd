@@ -10,6 +10,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = -100
 	elif Input.is_action_pressed("Right"):
 		velocity.x = 100
-	velocity.y+= 980 * delta
+	velocity.y+= get_gravity().y * delta
 	move_and_slide()
+	
 	pass
