@@ -6,6 +6,8 @@ var next_state : PlayerState
 
 #region /// state references
 # reference to all other states
+@onready var idle : PlayerStateIdle = %Idle
+@onready var run : PlayerStateRun = %Run
 #endregion
 
 #what happends when this state is initialized
