@@ -38,6 +38,11 @@ func physics_process(_delta: float) -> PlayerState:
 		return idle
 	elif player.velocity.y >= 0 :
 		return fall
-	player.velocity.x = player.direction.x * player.move_speed
+	#quick snak air movement
+	if player.direction.x != 0:
+		player.velocity.x = player.direction.x * player.move_speed
+	else:
+		#if user released horizontal inpurts mid-air, velocity.x drops to 0 instantly 
+		player.velocity.x = 0
 	
 	return next_state

@@ -31,6 +31,7 @@ func process(_delta: float) -> PlayerState:
 
 #what happens each physics_process tick in this state?
 func physics_process(_delta: float) -> PlayerState:
+	# Hollow Knight Style: Zero ramp-up acceleration, instantaneous full speed snap
 	player.velocity.x = player.direction.x * player.move_speed
 	if player.is_on_floor() == false:
 		return fall

@@ -51,6 +51,10 @@ func physics_process(_delta: float) -> PlayerState:
 		if buffer_timer > 0:
 			return jump
 		return idle
-	player.velocity.x = player.direction.x * player.move_speed
+	#responsive airborne controls
+	if player.direction.x != 0 :
+		player.velocity.x = player.direction.x * player.move_speed
+	else :
+		player.velocity.x = 0
 
 	return next_state

@@ -30,6 +30,7 @@ func process(_delta: float) -> PlayerState:
 
 #what happens each physics_process tick in this state?
 func physics_process(_delta: float) -> PlayerState:
+	# Snaps perfectly to 0 to prevent sliding off tiny single-tile pillars
 	player.velocity.x = 0
 	if player.is_on_floor() == false:
 		return fall
