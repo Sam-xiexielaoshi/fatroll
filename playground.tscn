@@ -11,7 +11,7 @@ width = 32
 height = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxb3u"]
-size = Vector2(32, 32)
+size = Vector2(32.111862, 32)
 
 [node name="Playerground" type="Node2D" unique_id=1318355466]
 
@@ -24,6 +24,19 @@ texture = SubResource("GradientTexture2D_oxb3u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=373597719]
 position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_oxb3u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1171165047]
+position = Vector2(696.5151, 571.5398)
+rotation = 1.5707964
+scale = Vector2(2.809983, 3.0246892)
+texture = SubResource("GradientTexture2D_oxb3u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2" unique_id=147716538]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=1453802404]
+position = Vector2(-0.14169312, -0.14920044)
+scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_oxb3u")
 
 [node name="Player" parent="." unique_id=367473996 instance=ExtResource("1_rupst")]
