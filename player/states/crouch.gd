@@ -1,4 +1,6 @@
-class_name PlayerStateIdle extends PlayerState
+class_name PlayerStateCrouch extends PlayerState
+
+@export var deceleration_rate : float = 10
 
 func init() -> void:
 	pass
@@ -23,10 +25,8 @@ func handle_input(_event : InputEvent) -> PlayerState:
 
 #what happens each process tick in this state?
 func process(_delta: float) -> PlayerState:
-	if player.direction.x != 0:
-		return run
-	elif player.direction.y > 0.5:
-		return crouch
+	if player.direction.y <= 0.5:
+		return idle
 	return next_state
 
 

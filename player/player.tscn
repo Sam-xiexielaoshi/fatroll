@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bn5mqaxxlcv61" path="res://player/states/run.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://ds1xudobhcwo3" path="res://player/states/jump.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://dlw6sfgmh67o1" path="res://player/states/fall.gd" id="5_g6k8r"]
+[ext_resource type="Script" uid="uid://c42npfg4f2jns" path="res://player/states/crouch.gd" id="6_g6k8r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oxb3u"]
 size = Vector2(18, 48)
@@ -32,6 +33,10 @@ script = ExtResource("4_qjkh3")
 [node name="Fall" type="Node" parent="States" unique_id=59665195]
 unique_name_in_owner = true
 script = ExtResource("5_g6k8r")
+
+[node name="Crouch" type="Node" parent="States" unique_id=627726778]
+unique_name_in_owner = true
+script = ExtResource("6_g6k8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=115848557]
 position = Vector2(0, -24)
