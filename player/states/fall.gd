@@ -51,6 +51,11 @@ func physics_process(_delta: float) -> PlayerState:
 		if buffer_timer > 0:
 			return jump
 		return idle
+	# SILKSONG FAST-FALL: Accelerate the gravity multiplier mid-fall if holding Down
+	if player.direction.y > 0.5:
+		player.gravity_multiplier = fall_gravity_multiplier * 2.0 # Drastically cuts fall time
+	else:
+		player.gravity_multiplier = fall_gravity_multiplier
 	#responsive airborne controls
 	if player.direction.x != 0 :
 		player.velocity.x = player.direction.x * player.move_speed

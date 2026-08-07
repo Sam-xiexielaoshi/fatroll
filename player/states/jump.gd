@@ -38,6 +38,10 @@ func physics_process(_delta: float) -> PlayerState:
 		return idle
 	elif player.velocity.y >= 0 :
 		return fall
+		
+	# SILKSONG FAST-FALL: Increase downward velocity if pulling down on the stick/pad
+	if player.direction.y > 0.5:
+		player.velocity.y += player.gravity * _delta * 1.5 # Tailor this multiplier to feel right
 	#quick snak air movement
 	if player.direction.x != 0:
 		player.velocity.x = player.direction.x * player.move_speed
