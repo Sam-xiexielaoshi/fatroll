@@ -13,7 +13,12 @@ size = Vector2(18, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxb3u"]
 size = Vector2(16, 47)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6k8r"]
+size = Vector2(16, 26)
+
 [node name="Player" type="CharacterBody2D" unique_id=367473996]
+collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_oul6g")
 
 [node name="States" type="Node" parent="." unique_id=750066084]
@@ -42,9 +47,14 @@ script = ExtResource("6_g6k8r")
 position = Vector2(0, -24)
 texture = SubResource("PlaceholderTexture2D_oxb3u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918153549]
+[node name="CollisionStand" type="CollisionShape2D" parent="." unique_id=918153549]
 position = Vector2(0, -23.5)
 shape = SubResource("RectangleShape2D_oxb3u")
+
+[node name="CollisionCrouch" type="CollisionShape2D" parent="." unique_id=1318431696]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_g6k8r")
+disabled = true
 
 [node name="Label" type="Label" parent="." unique_id=1252808991]
 offset_left = -24.0
@@ -54,3 +64,7 @@ offset_bottom = -50.0
 theme_override_font_sizes/font_size = 12
 text = "player"
 horizontal_alignment = 1
+
+[node name="OneWayPlatformRaycast" type="RayCast2D" parent="." unique_id=1188273611]
+target_position = Vector2(0, 4)
+collision_mask = 2
