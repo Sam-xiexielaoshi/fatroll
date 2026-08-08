@@ -50,7 +50,7 @@ scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_oxb3u")
 
 [node name="OneWayPlatform" type="Sprite2D" parent="." unique_id=34780219]
-position = Vector2(262.00006, 76)
+position = Vector2(537, 514)
 scale = Vector2(1.7200012, 0.24000108)
 texture = SubResource("GradientTexture2D_wtr1d")
 
@@ -63,4 +63,4 @@ shape = SubResource("RectangleShape2D_pq47m")
 one_way_collision = true
 
 [node name="Player" parent="." unique_id=367473996 instance=ExtResource("1_rupst")]
-position = Vector2(300, 59)
+position = Vector2(335, 607)

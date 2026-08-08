@@ -8,10 +8,9 @@ func init() -> void:
 
 #what happens when we enter this state
 func enter() -> void:
+	player.animation_player.play("crouch")
 	player.collision_stand.disabled = true
 	player.collision_crouch.disabled = false
-	player.sprite.scale.y = 0.625
-	player.sprite.position.y = -15.0
 	pass
 
 
@@ -19,15 +18,14 @@ func enter() -> void:
 func exit() -> void:
 	player.collision_stand.disabled = false
 	player.collision_crouch.disabled = true
-	player.sprite.scale.y = 1.0
-	player.sprite.position.y = -24.0
 	pass
 
 
 #what happends when an input is pressed
 func handle_input(_event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("Jump"):
-		if player.one_way_platform_raycast.is_colliding() == true and player.current_state == crouch:
+		player.one_way_platform_shape_cast.force_shapecast_update()
+		if player.one_way_platform_shape_cast.is_colliding() == true and player.current_state == crouch:
 			player.position.y += 4.0
 			return fall
 		return jump
