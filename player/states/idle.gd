@@ -28,7 +28,7 @@ func process(_delta: float) -> PlayerState:
 		return run
 	elif player.direction.y > 0.5:
 		return crouch
-	return next_state
+	return null
 
 
 #what happens each physics_process tick in this state?
