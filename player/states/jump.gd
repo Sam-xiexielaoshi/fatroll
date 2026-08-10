@@ -12,6 +12,11 @@ func enter() -> void:
 	player.animation_player.pause()
 	#player.add_debug_indicator(Color.LIME_GREEN)
 	player.velocity.y = -jump_velocity
+	
+	if player.previous_state == fall and not Input.is_action_just_pressed("Jump"):
+		await get_tree().physics_frame
+		player.velocity.y *= 0.5
+		player.change_states(fall)
 	pass
 
 
